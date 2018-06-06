@@ -28,7 +28,7 @@ public class CleanUpExceptionHandler extends ResponseEntityExceptionHandler{
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        String errorMessage = "Input of X and Y coordinates must be a List of exactly 2 Integers";
+        String errorMessage = "Input of X and Y coordinates must be a List of exactly 2 Integers and areaSize and startingPosition must be Not Null";
         ErrorResponse errorResponse = new ErrorResponse(errorMessage);
         LOGGER.debug("Returning 400 Bad Request");
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
