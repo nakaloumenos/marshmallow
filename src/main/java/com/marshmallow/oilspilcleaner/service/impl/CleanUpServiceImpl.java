@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public class CleanUpServiceImpl implements CleanUpService {
 
-    private static  final Logger LOGGER = LoggerFactory.getLogger(CleanUpServiceImpl.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(CleanUpServiceImpl.class);
 
     @Override
     public CleanUpResult run(CleanUpInstructions cleanUpInstructions) {

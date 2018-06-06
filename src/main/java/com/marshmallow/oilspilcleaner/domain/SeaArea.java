@@ -18,7 +18,7 @@ public class SeaArea {
     public boolean contains(List<Integer> position) {
         int x = position.get(0);
         int y = position.get(1);
-        if ( x < 0 || y<0 ||
+        if (x < 0 || y < 0 ||
                 x > topRightCorner.get(0) || y > topRightCorner.get(1)) {
             return false;
         }

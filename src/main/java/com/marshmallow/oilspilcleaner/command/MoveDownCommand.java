@@ -4,7 +4,7 @@ import com.marshmallow.oilspilcleaner.domain.RoboticCleaner;
 
 import java.util.List;
 
-public class MoveDownCommand implements Command{
+public class MoveDownCommand implements Command {
     @Override
     public List<Integer> move(RoboticCleaner roboticCleaner) {
         List<Integer> currentPosition = roboticCleaner.getCurrentPosition();

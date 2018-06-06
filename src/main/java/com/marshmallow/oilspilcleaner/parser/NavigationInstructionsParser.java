@@ -20,7 +20,7 @@ public class NavigationInstructionsParser {
     }
 
     public List<Command> toCommands() {
-        if(isNullOrEmpty(navigationInstructions)) return new ArrayList<>();
+        if (isNullOrEmpty(navigationInstructions)) return new ArrayList<>();
         return buildCommandsList(navigationInstructions);
     }
 
@@ -31,7 +31,7 @@ public class NavigationInstructionsParser {
     private List<Command> buildCommandsList(final String navigationInstructions) {
         List<Command> commands = new ArrayList<>();
 
-        for(String commandCharacter : commandCharactersFrom(navigationInstructions)) {
+        for (String commandCharacter : commandCharactersFrom(navigationInstructions)) {
             if (commandCharacter == null) break;
             Command mappedCommand = lookupEquivalentCommand(commandCharacter.toUpperCase());
             commands.add(mappedCommand);

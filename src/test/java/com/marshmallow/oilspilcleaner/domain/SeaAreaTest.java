@@ -73,7 +73,7 @@ public class SeaAreaTest {
     }
 
     @Test
-    public void positionWithoutOilSpilIsIdentified(){
+    public void positionWithoutOilSpilIsIdentified() {
 
         //Given
         List<Integer> position = Arrays.asList(1, 0);

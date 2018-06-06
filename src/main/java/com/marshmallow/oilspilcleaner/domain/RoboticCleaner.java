@@ -24,7 +24,7 @@ public class RoboticCleaner {
         for (Command command : commands) {
             LOGGER.info("Cleaner is moving...");
             String commandType = command.getClass().getSimpleName();
-            LOGGER.debug("Invoking " +commandType+ " to cleaner");
+            LOGGER.debug("Invoking " + commandType + " to cleaner");
             this.currentPosition = command.move(this);
             checkBoundariesAndDirtiness(this.currentPosition, seaArea);
         }
@@ -35,17 +35,17 @@ public class RoboticCleaner {
         int y = position.get(1);
         LOGGER.info("Checking if current position is within bounds");
         if (seaArea.contains(position)) {
-            LOGGER.info("Position ["+x+", "+y+"] is within bounds");
+            LOGGER.info("Position [" + x + ", " + y + "] is within bounds");
             LOGGER.info("Checking if current position has an oil spil");
             if (seaArea.hasOilPatchIn(position)) {
-                LOGGER.info("Position ["+x+", "+y+"] has oil spil");
+                LOGGER.info("Position [" + x + ", " + y + "] has oil spil");
                 this.oilPatchesCleanedCount++;
                 seaArea.removeDirt(position);
             }
-            LOGGER.info("Position ["+x+", "+y+"] is clean");
+            LOGGER.info("Position [" + x + ", " + y + "] is clean");
         } else {
-            LOGGER.error("Position ["+x+", "+y+"] is out of bounds!");
-            throw new OutOfBoundsException("Position ["+x+", "+y+"] is out of bounds!");
+            LOGGER.error("Position [" + x + ", " + y + "] is out of bounds!");
+            throw new OutOfBoundsException("Position [" + x + ", " + y + "] is out of bounds!");
         }
     }
 

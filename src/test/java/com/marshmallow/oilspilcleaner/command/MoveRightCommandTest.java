@@ -22,8 +22,8 @@ public class MoveRightCommandTest {
         List<Integer> newPosition = command.move(roboticCleaner);
 
         //Then
-        Assert.assertEquals(3 , (int) newPosition.get(0));
-        Assert.assertEquals(4 , (int) newPosition.get(1));
+        Assert.assertEquals(3, (int) newPosition.get(0));
+        Assert.assertEquals(4, (int) newPosition.get(1));
     }
 
 }

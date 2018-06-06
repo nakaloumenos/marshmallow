@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class OilSpilCleanerApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(OilSpilCleanerApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(OilSpilCleanerApplication.class, args);
+    }
 }

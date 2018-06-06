@@ -14,7 +14,7 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
-public class CleanUpExceptionHandler extends ResponseEntityExceptionHandler{
+public class CleanUpExceptionHandler extends ResponseEntityExceptionHandler {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CleanUpExceptionHandler.class);
 

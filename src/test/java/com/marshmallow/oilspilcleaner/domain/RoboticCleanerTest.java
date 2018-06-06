@@ -41,7 +41,7 @@ public class RoboticCleanerTest {
         roboticCleaner.clean(navigationInstructions, seaArea);
 
         //Then
-        Assert.assertEquals(Arrays.asList(1,3), roboticCleaner.getCurrentPosition());
+        Assert.assertEquals(Arrays.asList(1, 3), roboticCleaner.getCurrentPosition());
     }
 
 }
