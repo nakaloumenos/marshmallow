@@ -2,7 +2,7 @@ package com.marshmallow.oilspilcleaner.controller;
 
 import com.marshmallow.oilspilcleaner.resource.CleanUpInstructions;
 import com.marshmallow.oilspilcleaner.resource.CleanUpResult;
-import com.marshmallow.oilspilcleaner.service.CleaningService;
+import com.marshmallow.oilspilcleaner.service.CleanUpService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -18,16 +18,16 @@ public class CleanUpController {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(CleanUpController.class);
 
-    private final CleaningService cleaningService;
+    private final CleanUpService cleanUpService;
 
-    public CleanUpController(CleaningService cleaningService) {
-        this.cleaningService = cleaningService;
+    public CleanUpController(CleanUpService cleanUpService) {
+        this.cleanUpService = cleanUpService;
     }
 
     @PostMapping("/cleanup")
     public ResponseEntity sendCleanUpInstructions(@RequestBody CleanUpInstructions cleanUpInstructions) {
         LOGGER.info("Starting Clean Up Request");
-        CleanUpResult cleanUpResult = cleaningService.run(cleanUpInstructions);
+        CleanUpResult cleanUpResult = cleanUpService.run(cleanUpInstructions);
         return new ResponseEntity<>(cleanUpResult, HttpStatus.OK);
     }
 
