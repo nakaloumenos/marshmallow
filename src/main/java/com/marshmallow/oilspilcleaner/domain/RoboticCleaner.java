@@ -34,10 +34,10 @@ public class RoboticCleaner {
         int x = position.get(0);
         int y = position.get(1);
         LOGGER.info("Checking if current position is within bounds");
-        if (seaArea.isWithinBounds(position)) {
+        if (seaArea.contains(position)) {
             LOGGER.info("Position ["+x+", "+y+"] is within bounds");
             LOGGER.info("Checking if current position has an oil spil");
-            if (seaArea.isDirty(position)) {
+            if (seaArea.hasOilPatchIn(position)) {
                 LOGGER.info("Position ["+x+", "+y+"] has oil spil");
                 this.oilPatchesCleanedCount++;
                 seaArea.removeDirt(position);

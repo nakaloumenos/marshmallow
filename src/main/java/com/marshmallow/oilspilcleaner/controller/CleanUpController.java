@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping(path = "/api")
 public class CleanUpController {
@@ -25,7 +27,7 @@ public class CleanUpController {
     }
 
     @PostMapping("/cleanup")
-    public ResponseEntity sendCleanUpInstructions(@RequestBody CleanUpInstructions cleanUpInstructions) {
+    public ResponseEntity sendCleanUpInstructions(@Valid @RequestBody CleanUpInstructions cleanUpInstructions) {
         LOGGER.info("Starting Clean Up Request");
         CleanUpResult cleanUpResult = cleanUpService.run(cleanUpInstructions);
         return new ResponseEntity<>(cleanUpResult, HttpStatus.OK);

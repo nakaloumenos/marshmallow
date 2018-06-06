@@ -2,7 +2,6 @@ package com.marshmallow.oilspilcleaner.command;
 
 import com.marshmallow.oilspilcleaner.domain.RoboticCleaner;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MoveUpCommand implements Command{

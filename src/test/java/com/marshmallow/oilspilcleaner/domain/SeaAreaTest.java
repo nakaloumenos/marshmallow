@@ -1,18 +1,10 @@
 package com.marshmallow.oilspilcleaner.domain;
 
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.marshmallow.oilspilcleaner.resource.CleanUpInstructions;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.io.ClassPathResource;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -36,7 +28,7 @@ public class SeaAreaTest {
         List<Integer> position = Arrays.asList(5, 0);
 
         //Then
-        Assert.assertTrue(seaArea.isWithinBounds(position));
+        Assert.assertTrue(seaArea.contains(position));
     }
 
     @Test
@@ -45,7 +37,7 @@ public class SeaAreaTest {
         List<Integer> position = Arrays.asList(6, 0);
 
         //Then
-        Assert.assertFalse(seaArea.isWithinBounds(position));
+        Assert.assertFalse(seaArea.contains(position));
     }
 
     @Test
@@ -55,7 +47,7 @@ public class SeaAreaTest {
 
 
         //Then
-        Assert.assertFalse(seaArea.isWithinBounds(position));
+        Assert.assertFalse(seaArea.contains(position));
     }
 
     @Test
@@ -66,7 +58,7 @@ public class SeaAreaTest {
 
 
         //Then
-        Assert.assertFalse(seaArea.isWithinBounds(position));
+        Assert.assertFalse(seaArea.contains(position));
     }
 
     @Test
@@ -77,7 +69,7 @@ public class SeaAreaTest {
 
 
         //Then
-        Assert.assertFalse(seaArea.isWithinBounds(position));
+        Assert.assertFalse(seaArea.contains(position));
     }
 
     @Test
@@ -88,7 +80,7 @@ public class SeaAreaTest {
 
 
         //Then
-        Assert.assertFalse(seaArea.isDirty(position));
+        Assert.assertFalse(seaArea.hasOilPatchIn(position));
     }
 
     @Test
@@ -99,20 +91,7 @@ public class SeaAreaTest {
 
 
         //Then
-        Assert.assertTrue(seaArea.isDirty(position));
+        Assert.assertTrue(seaArea.hasOilPatchIn(position));
     }
-
-//    @Test
-//    public void oilPatchIsRemoved() {
-//
-//        //Given
-//        List<Integer> position = Arrays.asList(2, 3);
-//
-//        //When
-//        seaArea.removeDirt(position);
-//
-//        //Then
-//        Assert.assertTrue(seaArea.getOilPatches().isEmpty());
-//    }
 
 }

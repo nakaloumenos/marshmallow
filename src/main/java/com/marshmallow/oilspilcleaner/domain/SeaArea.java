@@ -15,7 +15,7 @@ public class SeaArea {
         this.oilPatches = oilPatches;
     }
 
-    public boolean isWithinBounds(List<Integer> position) {
+    public boolean contains(List<Integer> position) {
         int x = position.get(0);
         int y = position.get(1);
         if ( x < 0 || y<0 ||
@@ -25,7 +25,7 @@ public class SeaArea {
         return true;
     }
 
-    public boolean isDirty(List<Integer> position) {
+    public boolean hasOilPatchIn(List<Integer> position) {
         return this.oilPatches.contains(position);
     }
 
