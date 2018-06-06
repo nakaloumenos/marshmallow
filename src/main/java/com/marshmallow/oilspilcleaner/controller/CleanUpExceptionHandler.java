@@ -22,4 +22,12 @@ public class CleanUpExceptionHandler {
         return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
     }
 
+    @ExceptionHandler(IndexOutOfBoundsException.class)
+    public ResponseEntity handleIndexOutOfBoundsException(IndexOutOfBoundsException exception) {
+        String errorMessage = "Input of X and Y coordinates must be a List of exactly 2 Integers";
+        ErrorResponse errorResponse = new ErrorResponse(errorMessage);
+        LOGGER.debug("Returning 400 Bad Request");
+        return new ResponseEntity<>(errorResponse, HttpStatus.BAD_REQUEST);
+    }
+
 }
