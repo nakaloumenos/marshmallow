@@ -11,7 +11,7 @@ Upon cloning this repository, the project can be set up by following the setup i
 1.  ```sh
     $ mvn clean install
     ```
-2. ```sh
+2.  ```sh
     $ mvn spring-boot:run
     ```
 
